@@ -17,6 +17,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+    <!-- Start Up Button  -->
+    <div class="up"><i class="fas fa-arrow-up"></i></div>
+    <!-- End Up Button  -->
+
     <!-- Start Header -->
     <header id="home">
         <div class="container">
@@ -56,12 +61,15 @@
                 </p>
             </div>
         </div>
-        <i class="fas fa-angle-left arrow left fa-2x"></i> 
-        <i class="fas fa-angle-right arrow right fa-2x"></i>  
+        <i data-left="" class="fas fa-angle-left arrow left fa-2x"></i> 
+        <i data-right="" class="fas fa-angle-right arrow right fa-2x"></i>  
         <ul class="bullets">
-            <li></li>
-            <li class="active"></li>
-            <li></li>
+            <li data-land="0" class="active"></li>
+            <li data-land="1"></li>
+            <li data-land="2"></li>
+            <li data-land="3"></li>
+            <li data-land="4"></li>
+            <li data-land="5"></li>
         </ul>
     </div>
 
@@ -155,16 +163,16 @@
                 <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.</p>
             </div>
             <ul class="shuffle">
-                <li class="active">All</li>
-                <li>App</li>
-                <li>Photo</li>
-                <li>Web</li>
-                <li>Print</li>
+                <li data-port=".all" class="active">All</li>
+                <li data-port=".app">App</li>
+                <li data-port=".photo">Photo</li>
+                <li data-port=".web">Web</li>
+                <li data-port=".print">Print</li>
             </ul>
         </div>
         <div class="portfolio-content">
             <!-- Start port box -->
-            <div class="box">
+            <div class="box all app">
                 <div class="image">
                     <img src="images/shuffle-01.jpg" alt="shuffle-01" />
                 </div>
@@ -175,7 +183,7 @@
             </div>
             <!-- End port box -->
             <!-- Start port box -->
-            <div class="box">
+            <div class="box all photo">
                 <div class="image">
                     <img src="images/shuffle-02.jpg" alt="shuffle-02" />
                 </div>
@@ -186,7 +194,7 @@
             </div>
             <!-- End port box -->
             <!-- Start port box -->
-            <div class="box">
+            <div class="box all web">
                 <div class="image">
                     <img src="images/shuffle-03.jpg" alt="shuffle-03" />
                 </div>
@@ -197,7 +205,7 @@
             </div>
             <!-- End port box -->
             <!-- Start port box -->
-            <div class="box">
+            <div class="box all print">
                 <div class="image">
                     <img src="images/shuffle-04.jpg" alt="shuffle-04" />
                 </div>
@@ -208,7 +216,7 @@
             </div>
             <!-- End port box -->
             <!-- Start port box -->
-            <div class="box">
+            <div class="box all app">
                 <div class="image">
                     <img src="images/shuffle-05.jpg" alt="shuffle-05" />
                 </div>
@@ -219,7 +227,7 @@
             </div>
             <!-- End port box -->
             <!-- Start port box -->
-            <div class="box">
+            <div class="box all web">
                 <div class="image">
                     <img src="images/shuffle-06.jpg" alt="shuffle-06" />
                 </div>
@@ -230,7 +238,7 @@
             </div>
             <!-- End port box -->
             <!-- Start port box -->
-            <div class="box">
+            <div class="box all photo">
                 <div class="image">
                     <img src="images/shuffle-07.jpg" alt="shuffle-07" />
                 </div>
@@ -241,7 +249,7 @@
             </div>
             <!-- End port box -->
             <!-- Start port box -->
-            <div class="box">
+            <div class="box all print">
                 <div class="image">
                     <img src="images/shuffle-08.jpg" alt="shuffle-08" />
                 </div>
@@ -328,18 +336,72 @@
                     Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
                 </p>
                 <div class="content-group">
-                    <div class="content">
+                    <div class="content Page1">
                         <div class="image">
-                            <img src="images/skills-01.jpg" alt="Parson" />
+                            <img src="images/skills/skills-01.png" alt="Parson" />
                         </div>
                         <div class="text">
                             Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
                             <p>John Doe, CEO</p>
                         </div>
                     </div>
-                    <div class="content">
+                    <div class="content Page1">
                         <div class="image">
-                            <img src="images/skills-02.jpg" alt="Parson" />
+                            <img src="images/skills/skills-02.png" alt="Parson" />
+                        </div>
+                        <div class="text">
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                            <p>John Doe, CEO</p>
+                        </div>
+                    </div>
+                    <div class="content Page2 active">
+                        <div class="image">
+                            <img src="images/skills/skills-03.png" alt="Parson" />
+                        </div>
+                        <div class="text">
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                            <p>John Doe, CEO</p>
+                        </div>
+                    </div>
+                    <div class="content Page2 active">
+                        <div class="image">
+                            <img src="images/skills/skills-04.png" alt="Parson" />
+                        </div>
+                        <div class="text">
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                            <p>John Doe, CEO</p>
+                        </div>
+                    </div>
+                    <div class="content Page3">
+                        <div class="image">
+                            <img src="images/skills/skills-05.png" alt="Parson" />
+                        </div>
+                        <div class="text">
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                            <p>John Doe, CEO</p>
+                        </div>
+                    </div>
+                    <div class="content Page3">
+                        <div class="image">
+                            <img src="images/skills/skills-06.png" alt="Parson" />
+                        </div>
+                        <div class="text">
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                            <p>John Doe, CEO</p>
+                        </div>
+                    </div>
+                    <div class="content Page4">
+                        <div class="image">
+                            <img src="images/skills/skills-07.png" alt="Parson" />
+                        </div>
+                        <div class="text">
+                            Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
+                            <p>John Doe, CEO</p>
+                        </div>
+                    </div>
+                    <div class="content Page4">
+                        <div class="image">
+                            <img src="images/skills/skills-08.png" alt="Parson" />
                         </div>
                         <div class="text">
                             Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Mauris blandit aliquet elit, eget tincidunt.
@@ -347,9 +409,10 @@
                         </div>
                     </div>
                     <ul class="bullets">
-                        <li></li>
-                        <li class="active"></li>
-                        <li></li>
+                        <li data-test=".Page1"></li>
+                        <li data-test=".Page2" class="active"></li>
+                        <li data-test=".Page3"></li>
+                        <li data-test=".Page4"></li>
                     </ul>
                 </div>
             </div>
@@ -365,25 +428,25 @@
                     <div class="prog-holder">
                         <h4>Adobe</h4>
                         <div class="prog">
-                            <span style="width: 90%" data-progress="90%" ></span>
+                            <span data-progress="90%" ></span>
                         </div>
                     </div>
                     <div class="prog-holder">
                         <h4>Html5 &amp; Css3</h4>
                         <div class="prog">
-                            <span style="width: 95%" data-progress="95%" ></span>
+                            <span data-progress="95%" ></span>
                         </div>
                     </div>
                     <div class="prog-holder">
                         <h4>JavaScript</h4>
                         <div class="prog">
-                            <span style="width: 80%" data-progress="80%" ></span>
+                            <span data-progress="80%" ></span>
                         </div>
                     </div>
                     <div class="prog-holder">
                         <h4>Php</h4>
                         <div class="prog">
-                            <span style="width: 85%" data-progress="85%" ></span>
+                            <span data-progress="85%" ></span>
                         </div>
                     </div>
                 </div>
@@ -566,12 +629,13 @@
                 <i class="fab fa-linkedin"></i>
             </div>
             <p class="copyright">
-                &copy; 2021 <span>Kasper</span> All Right Reserved
+                &copy; <span class="year">2021</span> <span>Kasper</span> All Right Reserved
             </p>
         </div>
     </footer>
 
     <!-- End Footer  -->
 
+    <script src="js/script.js"></script>
 </body>
 </html>

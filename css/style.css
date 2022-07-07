@@ -92,6 +92,74 @@ ul { list-style: none; }
     color: var(--paragraph-color);
 }
 
+.up {
+    position: fixed;
+    bottom: 10px;
+    right: -50px;
+    color: #FFF;
+    background-color: #333;
+    z-index: 1000;
+    padding: 5px 10px;
+    border: 2px solid #FFF;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+
+.up.show { right: 10px; }
+
+.up:hover {
+    color: #333;
+    background-color: #e9ecef;
+}
+
+.popup-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 60%);
+    z-index: 20000;
+}
+
+.popup-overlay .img-pop {
+    position: fixed;
+    background-color: #FFF;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 1px 1px 1px 1px #CCC;
+    z-index: 20001;
+}
+
+.popup-overlay .img-pop i {
+    position: absolute;
+    font-size: 18px;
+    color: #F00;
+    top: -14px;
+    right: -17px;
+    background-color: #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.popup-overlay .img-pop i:hover {
+    background-color: #000;
+}
+
+.popup-overlay .img-pop img {
+    max-width: 100%;
+}
+
+.popup-overlay .img-pop h3 {
+    padding: 10px;
+}
+
 /* End Componant */
 
 /* Start Header */
@@ -125,7 +193,7 @@ header nav {
     justify-content: flex-end;
 }
 
-header nav .toggle { color: var(--white-color); font-size: 22px; }
+header nav .toggle { color: var(--white-color); font-size: 22px; cursor: pointer; transition: 0.3s;}
 
 @media (min-width:768px){
     header nav .toggle {
@@ -137,7 +205,8 @@ header nav ul { display: flex;}
 
 @media (max-width:767px){
     header nav ul { display: none; }
-    header nav .toggle:hover + ul {
+    header nav .toggle:hover + ul,
+    header nav .toggle.open + ul {
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -187,9 +256,10 @@ header nav ul { display: flex;}
 .landing {
     min-height: 100vh;
     background-color: #1f2021;
-    background-image: url('../images/landing.jpg');
+    background-image: url('../images/slider/landing-00.jpg');
     background-size: cover;
     position: relative;
+    transition: 0.5s;
 }
 
 .landing .overlay {
@@ -247,14 +317,16 @@ header nav ul { display: flex;}
     display: flex;
 }
 .landing .bullets li {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border: 1px solid var(--white-color);
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: 5px;
     cursor: pointer;
+    transition: 0.3s;
 }
-.landing .bullets li.active { background-color: var(--active-color); border-color: var(--active-color); }
+.landing .bullets li.active,
+.landing .bullets li:hover { background-color: var(--active-color); border-color: var(--active-color); }
 
 /* End Landing */
 
@@ -350,9 +422,16 @@ header nav ul { display: flex;}
 
 .portfolio .shuffle li { padding: 10px; cursor: pointer; }
 
-.portfolio .shuffle .active { background-color: var(--active-color); color: var(--white-color); }
+.portfolio .shuffle li.active,
+.portfolio .shuffle li:hover { background-color: var(--active-color); color: var(--white-color); }
 
-.portfolio .portfolio-content { display: flex; flex-wrap: wrap; margin-top: 60px; }
+.portfolio .portfolio-content { 
+    display: flex; 
+    flex-wrap: wrap;  
+    margin-top: 60px; 
+    justify-content: center;
+    align-items: center;
+}
 
 .portfolio .portfolio-content .box { overflow: hidden; position: relative; cursor: pointer; }
 
@@ -543,8 +622,8 @@ header nav ul { display: flex;}
     text-align: center;
     margin-bottom: 60px;
 }
-
-.our-skills .testimonials .content-group .content{ display: flex; }
+.our-skills .testimonials .content-group .content{ display: none; }
+.our-skills .testimonials .content-group .content.active{ display: flex; }
 
 .our-skills .testimonials .content-group .content img {
     width: 100px;
@@ -601,6 +680,8 @@ header nav ul { display: flex;}
     position: absolute;
     background-color: var(--active-color);
     height: 100%;
+    width: 0;
+    transition: 0.5s;
 }
 
 .our-skills  .skills .prog-group .prog-holder .prog span::before{
